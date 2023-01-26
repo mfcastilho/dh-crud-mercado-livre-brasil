@@ -23,6 +23,12 @@ const ProductsModel = {
 
     const dbJSON = JSON.stringify(products);
     fs.writeFileSync(productsPath, dbJSON); 
+  },
+  deleteProduct: (productIndex)=>{
+
+    products.splice(productIndex,1);
+    const dbJSON = JSON.stringify(products);
+    fs.writeFileSync(productsPath, dbJSON);
   }
 }
 

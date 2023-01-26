@@ -2,12 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const {v4:makeId} = require("uuid");
 
-// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const ProductsModel = require("../models/ProductsModel");
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Root - Show all products
@@ -136,7 +132,14 @@ const controller = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		// Do the magic
+
+		const {id} = req.params;
+		const products = ProductsModel.findAll();
+		const productIndex = products.findIndex(product=>product.id == id);
+
+		ProductsModel.deleteProduct(productIndex);
+
+		return res.redirect("/products");
 	}
 };
 
