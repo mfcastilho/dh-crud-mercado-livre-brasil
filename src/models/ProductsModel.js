@@ -9,6 +9,14 @@ const ProductsModel = {
   findAll:()=>{
 
     return products;
+  },
+  createProduct:(product)=>{
+
+    products.push(product);
+    const dbJSON = JSON.stringify(products);
+    fs.writeFileSync(productsPath, dbJSON);
+    return;
+
   }
 }
 
