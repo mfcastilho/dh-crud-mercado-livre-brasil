@@ -52,6 +52,6 @@ de detalhes do produto.
 <div>
 É importante entendermos que, dependendo da ação que precisamos realizar com o
 servidor, muda o método HTTP que vamos usar.
-Até a próxima!
 </div>
+Até a próxima!
  
