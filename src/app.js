@@ -11,7 +11,7 @@ const app = express();
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, '../public')));  // Necessário para os arquivos estáticos na pasta /public
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());

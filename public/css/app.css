@@ -401,6 +401,14 @@ hr {
   padding: 0 15px;
 }
 
+.form-input-image {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  
+}
+
 textarea.form-input {
   min-height: 140px;
   resize: vertical;
