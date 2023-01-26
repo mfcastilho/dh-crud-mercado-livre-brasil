@@ -1,9 +1,9 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Cafeteira Moulinex Dolce Gusto Edited",
-    "price": 100,
-    "discount": 50,
+    "price": 120,
+    "discount": "50",
     "category": "visited",
     "description": "Máquina de café Dolce Gusto Lumio. A máquina de café Dolce Gusto Lumio é uma variedade automática que chegou com um design radical a que estamos acostumados da Dolce Gusto, e neste post contamos tudo o que você precisa saber sobre ela, desde suas características técnicas até a qualidade das cápsulas ou preço.",
     "image": "img-cafetera-moulinex.jpg"
@@ -151,14 +151,5 @@
     "category": "in-sale",
     "description": "Camisa Adidas Flamengo III 2022/2023 - Adulto Torcedor - Masculina",
     "image": "1674707099978_img_camisa-flamengo.jpg"
-  },
-  {
-    "id": "6e7e8c5b-887a-49a0-a883-47623efc2e9f",
-    "name": "Tênis Nike Revolution 6 Next Nature ",
-    "price": 233.1,
-    "discount": "10",
-    "category": "in-sale",
-    "description": "CONFORTO VERSÁTIL COM AMORTECIMENTO FLEXÍVEL - Masculino - Preto",
-    "image": "1674707186139_img_tenis-nike.jpeg"
   }
 ]

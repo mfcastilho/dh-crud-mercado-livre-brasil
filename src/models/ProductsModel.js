@@ -17,6 +17,12 @@ const ProductsModel = {
     fs.writeFileSync(productsPath, dbJSON);
     return;
 
+  },
+  editProduct:(productUpdate, productIndex)=>{
+    products.splice(productIndex,1,productUpdate);
+
+    const dbJSON = JSON.stringify(products);
+    fs.writeFileSync(productsPath, dbJSON); 
   }
 }
 

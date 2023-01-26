@@ -22,8 +22,6 @@ const controller = {
 	detail: (req, res) => {
 		const {id} = req.params;
 
-		
-
 		const products = ProductsModel.findAll();
 		const product = products.find(product=>product.id == id);
 
@@ -71,14 +69,69 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		
-		res.render("product-edit-form.ejs");
+		const {id} = req.params;
+		const products = ProductsModel.findAll();
+		const product = products.find(product=>product.id == id);
+
+
+		return res.render("product-edit-form.ejs", {product});
 
 	},
 	// Update - Method to update
 	update: (req, res) => {
 		const {id} = req.params;
-		const {name, price, discount, category, description, image} = req.body;
+		let {name, price, discount, category, description} = req.body;
+		let img;
+
+
+		const products = ProductsModel.findAll();
+		const product = products.find(product=>product.id == id);
+		const productIndex = products.findIndex(product=>product.id == id);
+
+		console.log(product)
+		//Validando a imagem do produto
+		if(!req.file){
+			img = product.image;
+		}else{
+			img = req.file.filename;
+		}
+
+
+		if(!name){
+      name = product.name;
+    }
+
+    if(!price){
+      price = product.price;
+    }
+
+		if(!discount){
+      name = product.discount;
+    }
+
+    if(!category){
+      price = product.category;
+    }
+
+    if(!description){
+      description = product.description;
+    }
+
+
+    const productUpdate = {
+      id,
+      name,
+      price: Number(price),
+			discount,
+			category,
+      description,
+      image:img
+    }
+
+	
+		ProductsModel.editProduct(productUpdate, productIndex);
+
+		res.redirect("/products");
 	},
 
 	// Delete - Delete one product from DB
