@@ -12,7 +12,7 @@ alterações sejam armazenadas usando cada uma das rotas que implementamos na au
 anterior. Além disso, estaremos trabalhando no upload de imagens dos produtos.
 Boa sorte!
 </div>
-
+<hr>
 ### Micro desafio - Passo 1 
 
 - [X] Devemos codificar o formulário de upload do produto, que deve atualizar o arquivo JSON com os dados do novo produto inserido.
