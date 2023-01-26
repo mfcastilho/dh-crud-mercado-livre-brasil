@@ -20,7 +20,21 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
+		const {id} = req.params;
+
+		
+
+		const products = ProductsModel.findAll();
+		const product = products.find(product=>product.id == id);
+
+		const discountPrice = parseFloat(product.price) * (parseInt(product.discount)/100);
+		const finalPrice = product.price - discountPrice;
+		if(product == undefined){
+			return res.send("Produto não encontrado!");
+		}
+
+
+		res.render("detail.ejs", {product, finalPrice});
 	},
 
 	// Create - Form to create
@@ -57,11 +71,14 @@ const controller = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+		
+		res.render("product-edit-form.ejs");
+
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+		const {id} = req.params;
+		const {name, price, discount, category, description, image} = req.body;
 	},
 
 	// Delete - Delete one product from DB
