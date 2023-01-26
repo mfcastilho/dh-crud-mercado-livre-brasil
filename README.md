@@ -38,7 +38,7 @@ produto, o botão MODIFICAR.
 ### Micro desafio - Passo 3
 
 
-- [ ] A próxima etapa é poder remover um determinado produto de nosso JSON, para o qual
+- [X] A próxima etapa é poder remover um determinado produto de nosso JSON, para o qual
 usaremos a rota / products /: id, onde id é o identificador que permite que um produto
 específico seja reconhecido de forma única.
 Lembre-se que, para acessar a opção de exclusão, temos o botão EXCLUIR, na visualização
